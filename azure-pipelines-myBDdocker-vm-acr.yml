@@ -48,7 +48,7 @@ stages:
                     azureSubscription: '$(azureServiceConnection)'
                     scriptType: bash
                     scriptLocation: inlineScript
-                    failOnStandardError: true
+                    failOnStandardError: false
                     inlineScript: |
                       echo "Pulling image from Azure Container Registry..."
                       token=$(az acr login --name "$(acrName)" --expose-token --output tsv --query accessToken)
